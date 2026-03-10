@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NaraPro — Website Pembicara Profesional</title>
+    <meta
+      name="description"
+      content="Website profesional pembicara dengan UI/UX modern, animasi menarik, dan CMS ringan untuk mengelola konten tanpa coding."
+    />
+    <meta property="og:title" content="NaraPro — Website Pembicara Profesional" />
+    <meta
+      property="og:description"
+      content="Tampilan premium untuk pembicara: profil, topik, testimoni, jadwal event, dan CTA booking."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+    <header class="site-header glass">
+      <a class="logo" href="#hero">Nara<span>Pro</span></a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#about">Tentang</a>
+        <a href="#topics">Topik</a>
+        <a href="#testimonials">Testimoni</a>
+        <a href="#schedule">Jadwal</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="#contact">Book a Talk</a>
+        <button id="openCmsBtn" class="btn btn-primary" type="button">CMS</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero section reveal">
+        <div class="hero-content">
+          <p class="eyebrow" id="heroTagline">Inspiring Keynote Speaker</p>
+          <h1 id="speakerName">Raka Pratama</h1>
+          <p class="subtitle" id="heroSubtitle">
+            Membantu tim dan pemimpin membangun komunikasi berpengaruh, growth mindset, dan budaya performa tinggi.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary pulse">Book a Talk</a>
+            <a href="#topics" class="btn btn-ghost">Lihat Topik</a>
+          </div>
+          <div class="hero-metrics">
+            <article>
+              <h3 id="metricEvents">120+</h3>
+              <p>Event Nasional</p>
+            </article>
+            <article>
+              <h3 id="metricAudience">35K+</h3>
+              <p>Total Audiens</p>
+            </article>
+            <article>
+              <h3 id="metricRating">4.9/5</h3>
+              <p>Rata-rata Rating</p>
+            </article>
+          </div>
+        </div>
+        <div class="hero-card glass floating">
+          <h2>Upcoming Highlight</h2>
+          <p id="upcomingEvent">Leadership Summit 2026 · Jakarta · 21 Mei</p>
+          <p>
+            “Communication that Moves People”
+          </p>
+        </div>
+      </section>
+
+      <section id="about" class="section reveal">
+        <h2>Tentang Pembicara</h2>
+        <p id="aboutText">
+          Raka adalah pembicara profesional dengan pengalaman lebih dari 10 tahun membantu perusahaan, startup, dan institusi pendidikan merancang komunikasi yang jelas, empatik, dan berdampak.
+        </p>
+      </section>
+
+      <section id="topics" class="section reveal">
+        <h2>Topik Unggulan</h2>
+        <div class="card-grid" id="topicsGrid"></div>
+      </section>
+
+      <section id="testimonials" class="section reveal">
+        <h2>Testimoni Klien</h2>
+        <div class="card-grid" id="testimonialsGrid"></div>
+      </section>
+
+      <section id="schedule" class="section reveal">
+        <h2>Agenda Mendatang</h2>
+        <div class="card-grid" id="scheduleGrid"></div>
+      </section>
+
+      <section id="contact" class="section reveal contact-section glass">
+        <h2>Siap undang pembicara untuk acara Anda?</h2>
+        <p>Isi form cepat berikut. Tim kami akan menghubungi dalam 1x24 jam.</p>
+        <form class="contact-form" novalidate>
+          <label>
+            Nama
+            <input type="text" required placeholder="Nama Anda" />
+          </label>
+          <label>
+            Email
+            <input type="email" required placeholder="nama@email.com" />
+          </label>
+          <label>
+            Jenis Acara
+            <input type="text" required placeholder="Seminar / Workshop / Company Meeting" />
+          </label>
+          <button type="submit" class="btn btn-primary">Kirim Permintaan</button>
+          <p class="form-note" id="formMessage" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <aside id="cmsPanel" class="cms-panel" aria-hidden="true">
+      <div class="cms-content">
+        <div class="cms-header">
+          <h2>CMS Konten</h2>
+          <button id="closeCmsBtn" class="btn btn-ghost" type="button">Tutup</button>
+        </div>
+        <p class="cms-intro">Edit konten utama website tanpa menyentuh kode.</p>
+        <form id="cmsForm" class="cms-form">
+          <label>Nama Pembicara <input name="speakerName" /></label>
+          <label>Tagline Hero <input name="heroTagline" /></label>
+          <label>Subtitle Hero <textarea name="heroSubtitle" rows="3"></textarea></label>
+          <label>Tentang Pembicara <textarea name="aboutText" rows="4"></textarea></label>
+          <label>Event Mendatang <input name="upcomingEvent" /></label>
+          <label>Topik (pisahkan dengan ;)
+            <textarea name="topics" rows="4"></textarea>
+          </label>
+          <label>Testimoni (Format: "kutipan|nama jabatan", pisahkan ;)
+            <textarea name="testimonials" rows="4"></textarea>
+          </label>
+          <label>Agenda (Format: "nama event|tanggal/lokasi", pisahkan ;)
+            <textarea name="schedule" rows="4"></textarea>
+          </label>
+          <div class="cms-actions">
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            <button id="resetCmsBtn" type="button" class="btn btn-ghost">Reset Default</button>
+          </div>
+          <p id="cmsStatus" class="form-note" aria-live="polite"></p>
+        </form>
+      </div>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>
